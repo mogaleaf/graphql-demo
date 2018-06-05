@@ -1,0 +1,48 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    searchWines(color:WineColor): [Wine]!
+    searchReviews(moreThanRate:Int!): [Review]!
+}
+
+type Mutation {
+    addWine(wine:WineInput!): Wine!
+    addReview(wineId:Int!,review: ReviewInput!): Review!
+}
+
+type Wine {
+    id: Int!
+    color: WineColor
+    name: String!
+    country: String!
+    reviews: [Review]!
+    rate: Float!
+}
+
+type Review {
+    name: String!
+    text: String!
+    rate: Int!
+    wine: Wine
+}
+
+enum WineColor {
+    RED
+    WHITE
+    ROSE
+}
+
+input WineInput {
+    name: String!
+    color: WineColor!
+    country: String!
+}
+
+input ReviewInput {
+    name: String!
+    text: String!
+    rate: Int!
+}

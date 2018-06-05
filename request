@@ -1,0 +1,51 @@
+#Add Wine
+mutation {addWine(wine: {
+  name: "Chardonnay",
+  color: WHITE,
+  country: "USA"
+}){
+  id
+}
+}
+
+#Search Wine
+{
+  searchWines{
+    id
+    country
+    reviews {
+      text
+    }
+  }
+}
+
+#Add Review
+mutation {addReview(wineId : 2 , review: {
+  name: "Cecile",
+  text: "Beurk",
+  rate: 1
+}){
+  name
+}
+}
+
+#Search Review
+{
+  searchReviews(moreThanRate:2){
+    name
+    text
+    wine {
+      name
+    }
+  }
+}
+
+#Error
+mutation {addReview(wineId : 200 , review: {
+  name: "Fail",
+  text: "Sorry!",
+  rate: 5
+}){
+  name
+}
+}
