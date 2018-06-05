@@ -4,6 +4,7 @@ import "graph-ql-meetup/model"
 
 var WineSeq int32
 
+//Fake datasource for wine
 var WineList = []*model.Wine{
 	{
 		Color:   model.RED,
@@ -13,6 +14,7 @@ var WineList = []*model.Wine{
 	},
 }
 
+//Fake datasource for review
 var Reviews = make(map[int32][]*model.Review)
 
 func init() {

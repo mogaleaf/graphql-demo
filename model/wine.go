@@ -8,6 +8,7 @@ const (
 	ROSE  WineColor = "ROSE"
 )
 
+//Wine object from Graphql schema
 type Wine struct {
 	Id      int32
 	Color   WineColor
@@ -17,15 +18,10 @@ type Wine struct {
 	Rate    float64
 }
 
+//Review object from Graphql schema
 type Review struct {
 	Name string
 	Text string
 	Rate int32
 	WineId int32
-}
-
-type ReviewInput struct {
-	Name string
-	Text string
-	Rate float32
 }

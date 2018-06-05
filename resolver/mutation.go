@@ -6,6 +6,7 @@ import (
 	"errors"
 )
 
+//Mutation AddWine
 func (r *Resolver) AddWine(args *struct {
 	Wine *WineInput
 }) *wineResolver {
@@ -20,6 +21,7 @@ func (r *Resolver) AddWine(args *struct {
 	return &wineResolver{wineCreated}
 }
 
+//Mutation AddReview
 func (r *Resolver) AddReview(args *struct {
 	WineId int32
 	Review *ReviewInput
@@ -38,6 +40,8 @@ func (r *Resolver) AddReview(args *struct {
 	return &reviewResolver{reviewCreated}, nil
 }
 
+
+//Input object from graphql schema
 type WineInput struct {
 	Name    string
 	Color   model.WineColor
