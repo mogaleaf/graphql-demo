@@ -21,8 +21,8 @@ mutation {addWine(wine: {
 
 #Add Review
 mutation {addReview(wineId : 2 , review: {
-  name: "Cecile",
-  text: "Beurk",
+  name: "David",
+  text: "USA wine are NOT GOOD",
   rate: 1
 }){
   name
