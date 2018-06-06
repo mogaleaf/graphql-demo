@@ -14,6 +14,4 @@ type Wine struct {
 	Color   WineColor
 	Name    string
 	Country string
-	Reviews []*Review
-	Rate    float64
 }
